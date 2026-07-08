@@ -88,5 +88,49 @@ next
 Step 3:
 In DNS, it will notify a warning, next to skip that
 Step 4:
+Keep the name and next
+
+Step 5: Path ( storage path)
+Kept the default setting and next
+Step 6: Review Options
+All the setting you had setup is in here
+
+Step 7:Prerequisites Check
+The computer will check then can be All prerequisite checks passed successfully...
+
+If it warn anything, ignore it
+then install
+
+after that, when relogin, you will notice some change , we about done setup the AD server, now let the client join the Domain.
+
+Fifth:
+Keep the server running at the back ground, open the win11 client
+
+Search about your pc and open that
+
+go down, in related link, open advance systems setting
+There will be System Properties window at the screen
+Go to computer name, there will be change the domain tab, change it, tick the domain and name it lab.local
+remember to setup static ip for client pc because we disable DHCP in natnetwork or the client won't found the server
+
+then, it will ask the password and username to join the domain
+
+we will use Administrator with P@ssword123
+
+then client will restart
+
+Notice: the client01 in client computer will only available in client computer.
+
+we are pretty much done with basic set up. Now DNS forwarder for internet connection
+Sixth:
+In server manager, choose tool then dns
+
+Which will open DNS manager
+Choose DC01, properties of forwarder, then edit, add Google DNS ip is 8.8.8.8 here.
+Ok and finish.
+
+
+
+
 
 
