@@ -1,5 +1,92 @@
 First, asume that you already have Oracle Virtual Box:
 
-Download the server ISO for free from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022
+Download the server ISO for free from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2022
 
 And download Window 11 client ISO from https://www.microsoft.com/en-us/software-download/windows11
+
+Create Natnetwork in the Orcale virtual box, right after install, choose that as network interface
+Disable DHCP because the server going to do that for us.
+
+
+First, i am gonna install Win11 client
+
+Because with UEFI enable, i could not boot the OS, so i going to do the hard way, which bypass the secure boot check, if you can do, i recommend you skip
+
+Recommend:
+4gb ram
+2 core
+60gb hard disk
+"""
+USE window pro or pro for work station or enterprise, not home !
+When inside, continue and when meet the notification that system don't meet requirement
+
+Shift + F10
+regedit
+
+go to HKEY_LOCAL_MACHINE -> SYSTEM -> setup
+Right click the setup -> new -> key
+
+Rename the folder to LabConfig
+inside the folder, create 2 DWORD (32-bit) Value
+rename each each to BypassTPMCheck and BypassSecureBootCheck
+Then open and edit value inside to 1
+
+Close and finish bypass there check
+"""
+
+then go on the installation.
+Skip update,...
+bypass Microsoft account sign in
+
+Open cmd with shift f10 then: start ms-cxh:localonly
+
+Second the server one:
+recommend
+4gb ram
+2 core
+60 gb storage
+
+When install, choose datacenter with graphic, then custom
+after a while, we come to password, i use P@ssword123 as password
+it ask ctrl shift delete to unlock, you shouldn't use that on host machine, we use input tab, keyboard and ctrl shift del in there
+
+Third server managerment
+
+Change Name:
+in the left, choose local server
+click at the current name
+then click change to change the name
+
+It will as you to restart the computer but we will restart later
+
+below the name, we have ethernet, click that, open the properties of the netword, choose ipv4 and propeties, there will let you set up IPv4 and DNS
+
+After that, restart the virtual machine
+
+Fourth: Active Directory Domain Services
+On the right top side, choose manage -> Add Roles and Features
+Next - > keep the Role-based or feature-based installation - > next
+
+Then, server selection, it show your current virtual network, 
+in server role, add Active Directory Domain Services.
+then continue on, there is no other configuration
+Then install and wait.
+
+After complete, stage two, promote the server to Domain controller
+
+Click Promote this server to a domain controller
+Step 1:Deployment Configuration
+Choose Add a new forest 
+In name : lab.local
+Next
+Step 2: Domain Controller Options
+It will tick the Domain Name System (DNS) server , which will install DNS service for you
+
+Then will be password, i use P@ssword123 again
+
+next
+Step 3:
+In DNS, it will notify a warning, next to skip that
+Step 4:
+
+
