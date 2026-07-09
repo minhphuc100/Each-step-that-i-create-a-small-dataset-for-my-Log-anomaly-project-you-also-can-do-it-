@@ -1,0 +1,63 @@
+{
+  "run": {
+    "iterations": 12,
+    "minDelaySeconds": 20,
+    "maxDelaySeconds": 90,
+    "enabledModules": [
+      "file",
+      "office",
+      "idle",
+      "network"
+    ]
+  },
+  "identity": {
+    "domainName": "lab.local",
+    "domainController": "DC01.lab.local"
+  },
+  "paths": {
+    "localWorkspace": "$env:USERPROFILE\\Documents\\ActivityGenerator",
+    "networkShare": "\\\\DC01\\Shared",
+    "logDirectory": ".\\logs"
+  },
+  "file": {
+    "createCountMin": 1,
+    "createCountMax": 3,
+    "extensions": [
+      ".txt",
+      ".csv",
+      ".json"
+    ],
+    "copyToNetworkShare": true,
+    "readExistingFiles": true,
+    "deleteTemporaryFiles": false
+  },
+  "office": {
+    "enabled": true,
+    "preferComAutomation": true,
+    "createWordDocument": true,
+    "createExcelWorkbook": true
+  },
+  "idle": {
+    "minSeconds": 15,
+    "maxSeconds": 120
+  },
+  "network": {
+    "dnsQueries": [
+      "lab.local",
+      "DC01.lab.local",
+      "www.microsoft.com"
+    ],
+    "webUrls": [
+      "https://www.microsoft.com",
+      "https://learn.microsoft.com"
+    ],
+    "testPorts": [
+      53,
+      88,
+      135,
+      389,
+      445
+    ],
+    "runDomainDiscoveryCommands": true
+  }
+}
