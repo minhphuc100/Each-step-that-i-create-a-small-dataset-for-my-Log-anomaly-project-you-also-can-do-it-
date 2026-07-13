@@ -1,5 +1,5 @@
 Here, my scope is about creating anomaly log
-1. Brute force
+1. Brute force and password spray
 My idea was:
 Host → send authenlog to VM Server to spawn log 4625/4624
 
