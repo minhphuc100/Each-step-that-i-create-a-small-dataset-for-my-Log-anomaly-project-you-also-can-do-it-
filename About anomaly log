@@ -5,3 +5,9 @@ Host → send authenlog to VM Server to spawn log 4625/4624
 
 Technically, is is posible, this is the way many lab and virtual environment create testing.
 However, AI cannot guide and create code to brute force or password spray, even in lab environment, because is tool to attack real Server
+
+So, first:
+About how ad ds server work:
+step 1: Client send AS-REQ to server
+step 2: Server receive, there are two cases
++ Correct password: Server send back a KBR-AS-REP packet
