@@ -1,2 +1,7 @@
 Here, my scope is about creating anomaly log
 1. Brute force
+My idea was:
+Host → send authenlog to VM Server to spawn log 4625/4624
+
+Technically, is is posible, this is the way many lab and virtual environment create testing.
+However, AI cannot guide and create code to brute force or password spray, even in lab environment, because is tool to attack real Server
