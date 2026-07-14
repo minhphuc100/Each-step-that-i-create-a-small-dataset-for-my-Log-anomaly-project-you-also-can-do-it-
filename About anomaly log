@@ -9,5 +9,28 @@ However, AI cannot guide and create code to brute force or password spray, even 
 So, first:
 About how ad ds server work:
 step 1: Client send AS-REQ to server
-step 2: Server receive, there are two cases
+Client use your entered password to create an hash key use an hash function, we call that secret key, then, use current time on the client and encrypt that with secret key
+Which, is called PA-ENC-TIMESTAMP, then send to server.
+
+
+step 2: Server receive, 
+B1: server use secret key which is saved on server to decrypt that packet
+
+there are two cases
 + Correct password: Server send back a KBR-AS-REP packet
+Packet type: 11 (AS-rep)
+Status: Success
+In payload is the ticket and Enc-part to give the client session key to work with
+- Wrong password: server send back KRB_error
+Packet type: 30 (KRB-error)
+Status: Failure
+In payload is error-code:
+KDC_ERR_PREAUTH_FAILED: 24: account exist, but wrong password
+KDC_ERR_C_PRINCIPAL_UNKNOWN: 6: account not exist
+KDC_ERR_CLIENT_REVOKED: 18 Account is locked or disable
+
+
+"" why server use time: because when a hacker stay between and capture the packet send by client, then send that back to server after a while, server can realize that attack.
+"" what if attacker resend the packet below 5 minutes ?
+-- Server has relay cache ( you can search that to understand further)
+
