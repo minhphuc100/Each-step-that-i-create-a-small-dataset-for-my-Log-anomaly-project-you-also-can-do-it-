@@ -1,4 +1,7 @@
 Here, my scope is about creating anomaly log
+
+Note: Don't use my guide to attack real system !, i won't take responsibility for any consequence.
+
 1. Brute force and password spray
 My idea was:
 Host → send authenlog to VM Server to spawn log 4625/4624
@@ -36,3 +39,5 @@ KDC_ERR_CLIENT_REVOKED: 18 Account is locked or disable
 
 The next problems is:
 An process is not just send AS-REQ right away, they also have communication between client end server before send the packet.
+let focus on only send for anomaly first.
+
