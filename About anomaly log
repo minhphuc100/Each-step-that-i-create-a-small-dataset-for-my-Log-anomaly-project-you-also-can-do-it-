@@ -34,3 +34,5 @@ KDC_ERR_CLIENT_REVOKED: 18 Account is locked or disable
 "" what if attacker resend the packet below 5 minutes ?
 -- Server has relay cache ( you can search that to understand further)
 
+The next problems is:
+An process is not just send AS-REQ right away, they also have communication between client end server before send the packet.
