@@ -131,7 +131,6 @@ Ok and finish.
 
 Create user and share file or folder, i believe that you can do it, i wont specify it here.
 
-Note: SSH is a service original from linux, so to window, it is an external service, the login log is in application log instead of securities.
 
 Next going to be the activities generator ( quite big for our current project, but it kind of fun to do so)
 
