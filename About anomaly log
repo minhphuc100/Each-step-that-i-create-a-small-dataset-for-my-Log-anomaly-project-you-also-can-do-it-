@@ -41,3 +41,5 @@ The next problems is:
 An process is not just send AS-REQ right away, they also have communication between client end server before send the packet.
 let focus on only send for anomaly first.
 
+Actually, my friends use ssh to create log and it is pretty good though, i though i wait and see how he do that and also put that there.
+
